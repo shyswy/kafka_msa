@@ -1,0 +1,62 @@
+{
+    "context": {
+        "message_id": "",
+        "message_type": "report",
+        "property_id" : "PROkz2Lrv0uRTyDjmhfw-BUeA",
+        "client_id": "",
+        "client_type": "DEVICE_SIGNAGE",
+        "name": "report",
+        "namespace":"device"
+    },
+    "payload": {
+        "message_class":"REPORT",
+        "timestamp": 1,
+        "device_type": "",
+        "device_sub_type": "",
+        "os_type": "",
+        "message_encoded": false,
+        "message": {
+            "activation_status": "activated",
+            "device_status": "signal_detected",
+            "response_report": false,
+            "agent_polling_time": 120,
+            "no_update": false,
+            "device_id": "test_device01",
+            "screen": "on",
+            "transfer_byte": {
+                "receive": 0,
+                "send": 0
+            },
+            "diagnostics": {
+                "TEM-01":{
+                    "status":"NG",
+                    "data":{
+                        "value":32,
+                        "threshold":2
+                    }
+                },
+                "DSK-01":{
+                    "status":"OK",
+                    "data":{
+                        "value":96629,
+                        "threshold":1
+                    }
+                },
+                "CPU-01":{
+                    "status":"NG",
+                    "data":{
+                        "value":32,
+                        "threshold": 1
+                    }
+                },
+                "MEM-01":{
+                    "status":"NG",
+                    "data":{
+                        "value":32,
+                        "threshold":1
+                    }
+                }
+            }
+        }
+    }
+}

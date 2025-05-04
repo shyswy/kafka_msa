@@ -1,0 +1,25 @@
+{
+  "name": "th-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc --reporter=cobertura --reporter=html mocha --recursive --timeout 5000",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-lambda": "^3.414.0",
+    "@aws-sdk/client-sts": "^3.433.0",
+    "dayjs": "^1.11.13",
+    "deepmerge": "^4.3.1",
+    "dotenv": "^16.4.5",
+    "hashmap": "^2.4.0",
+    "kafkajs": "^2.2.4",
+    "lodash": "^4.17.21",
+    "mysql2": "^3.13.0",
+    "uuid": "^9.0.1",
+    "uuid-base62": "^0.1.0"
+  }
+}

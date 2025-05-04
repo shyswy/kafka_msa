@@ -1,0 +1,21 @@
+version: "2"
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper:latest # 3.4.6
+    container_name: sanghyun_zookeeper
+    ports:
+      - "2181:2181"
+  kafka:
+    image: wurstmeister/kafka:latest # 2.12-2.5.0
+    container_name: sanghyun_kafka
+    environment:
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092 #  Kafka 브로커가 수신 대기할 리스너를 정의
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
+      KAFKA_ADVERTISED_PORT: 9092 # Kafka 브로커가 외부에 노출되는 포트 번호를 정의
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CREATE_TOPICS: "device_notice:1:1, device_response:1:1, device_report:1:1, device_register:1:1, device_connection:1:1" # Topic명:Partition개수:Replica개수
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "9092:9092"
