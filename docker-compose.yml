@@ -22,7 +22,7 @@ services:
       KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
       KAFKA_ADVERTISED_PORT: 9092
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_CREATE_TOPICS: 'device_notice:1:1, device_response:1:1, device_report:1:1, device_register:1:1, device_connection:1:1' # Topic명:Partition개수:Replica개수
+      KAFKA_CREATE_TOPICS: 'test_topic:1:1, device_report:1:1' # Topic명:Partition개수:Replica개수
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
@@ -66,7 +66,7 @@ services:
     #      dockerfile: Dockerfile # Dockerfile 경로를 지정하세요
 
     build: #image를 DockerFile 기반으로 사용한다
-      context: eda_producer   #DockerFile이 있는 디렉토리
+      context: eda_consumer   #DockerFile이 있는 디렉토리
       dockerfile: Dockerfile
     #    volumes:
     #      - ./libs:/home/libs

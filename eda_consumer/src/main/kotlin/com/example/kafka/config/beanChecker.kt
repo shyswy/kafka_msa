@@ -10,7 +10,8 @@ class BeanChecker(private val context: ApplicationContext) : ApplicationRunner {
     override fun run(args: ApplicationArguments?) {
         val beanNames = context.beanDefinitionNames
         if ("messageController" in beanNames) {
-            println("✅ MessageController is registered as a Bean!")
+            // new, 22 들어가나 확인해보자! 제대로 반영..?
+            println("✅ new MessageController22 is registered as a Bean!")
         } else {
             println("❌ MessageController is NOT registered!")
         }

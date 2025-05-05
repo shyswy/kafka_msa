@@ -3,14 +3,18 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "3.0.11"
 	id("io.spring.dependency-management") version "1.1.0"
-	kotlin("jvm") version "1.7.22"
-	kotlin("plugin.spring") version "1.7.22"
-	kotlin("plugin.jpa") version "1.7.22"
+//	kotlin("jvm") version "1.7.22"
+//	kotlin("plugin.spring") version "1.7.22"
+//	kotlin("plugin.jpa") version "1.7.22"
+	kotlin("jvm") version "1.8.10"
+	kotlin("plugin.spring") version "1.8.10"
+	kotlin("plugin.jpa") version "1.8.10"
 }
 
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_17
+java.targetCompatibility = JavaVersion.VERSION_17
 
 repositories {
 	mavenCentral()
@@ -28,8 +32,6 @@ dependencies {
 	runtimeOnly("com.h2database:h2")
 
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0")
-
-	implementation("org.springframework.kafka:spring-kafka")
 
 	implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
 	implementation("com.querydsl:querydsl-kotlin:5.0.0")

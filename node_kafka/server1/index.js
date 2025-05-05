@@ -19,12 +19,32 @@ async function start() {
   // reportProducer.start();
   console.log("reportProducer start22!");
   await reportProducer.init();
-  // await reportProducer.send("test-topic","hi");
+
+  const dummyMessage = {
+    id: 1,
+    age: 25,
+    name: "John Doe",
+    content: "Hello from Node.js!"
+  };
+
+  const dummyMessage2 = {
+    id2: 1,
+    content2: "Hello from Node.js!"
+  };
 
   setInterval(async () => {
     try {
-      await reportProducer.send("test-topic", "hi");
+      await reportProducer.send("test-topic", dummyMessage);
       console.log("Message sent to test-topic");
+
+      await reportProducer.send("test-topic", dummyMessage2);
+      console.log("wrong  format Message sent to test-topic");
+
+      await reportProducer.send("test-topic2", dummyMessage2);
+      console.log("Message sent to test-topic2");
+
+      await reportProducer.send("test-topic2", dummyMessage);
+      console.log("wrong  format Message sent to test-topic");
     } catch (err) {
       console.error("Failed to send message:", err);
     }
